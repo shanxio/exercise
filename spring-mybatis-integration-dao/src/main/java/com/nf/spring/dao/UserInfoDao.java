@@ -32,6 +32,7 @@ public interface UserInfoDao {
 
     /**
      * 查询当前所有用户的权限
+     *asdfljsdfj
      * @param username
      * @return
      */
