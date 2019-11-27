@@ -16,7 +16,7 @@ public interface UserInfoDao {
     List<UserInfo> getAll(@Param("pageNum") int pageNum,@Param("pageSize") int pageSize);
 
     /**
-     * 添加用户
+     * 添加用户信息
      * @param userInfo
      */
     void insert(UserInfo info);
