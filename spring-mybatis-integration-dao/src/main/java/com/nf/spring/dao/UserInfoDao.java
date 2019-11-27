@@ -21,6 +21,8 @@ public interface UserInfoDao {
      */
     void insert(UserInfo userInfo);
 
+    
+    void insertView(UserInfo userInfo);
     /**
      * 查询当前用户
      * @param username
