@@ -34,7 +34,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * 导出Excel
  * @author liuyazhuang
- *asdfsd
  * @param <T>
  */
 public class ExportExcelUtil<T>{

@@ -41,6 +41,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public void updatePassowrd(UserInfo userInfo) {
+
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
         userInfoDao.updatePassowrd(userInfo);
