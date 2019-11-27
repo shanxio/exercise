@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nf.spring.dao.UserInfoDao">
+
+
+    <resultMap id="userInfoResultMap" type="com.nf.spring.entity.UserInfo">
+        <id property="id" column="id"></id>
+        <result column="username" property="username"></result>
+        <result column="date" property="date"></result>
+    </resultMap>
+    <insert id="insert" parameterType="com.nf.spring.entity.UserInfo">
+        insert into userinfo(username,date,email,phone) values(#{username},#{date},#{email},#{phone})
+    </insert>
+    <update id="updatePassowrd" parameterType="com.nf.spring.entity.UserInfo">
+        update userinfo set password = #{password} where username = #{username}
+    </update>
+
+
+    <select id="getAll" resultMap="userInfoResultMap">
+        select id, username, date, email, phone, password, enabled, accountNonLocked, accountNonExpired, credentialsNonExpired from userinfo
+    </select>
+    <select id="getById" resultMap="userInfoResultMap">
+        select id, username, date, email, phone, password, enabled, accountNonLocked, accountNonExpired, credentialsNonExpired from userinfo where username = #{username};
+    </select>
+
+    <!--根据用户名找到对应的权限-->
+    <select id="getPermissionByUsername" resultType="com.nf.spring.entity.Permission">
+        select permission.* from userinfo
+            inner join user_role on userinfo.id = user_role.user_id /*关联角色用户表找到对应的角色*/
+            inner join role_permission on user_role.role_id = role_permission.role_id /*根据角色找到对应的权限id*/
+            inner join permission on permission.id = role_permission.perm_id /*根据权限id找到对应的所有权限*/
+            where username = #{username}
+    </select>
+</mapper>

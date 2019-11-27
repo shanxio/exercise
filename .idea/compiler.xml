@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-mybatis-integration-entity" />
+        <module name="spring-mybatis-integration-utils" />
+        <module name="spring-mybatis-integration-controller" />
+        <module name="spring-mybatis-integration-exception" />
+        <module name="spring-mybatis-integration-service" />
+        <module name="spring-mybatis-integration-dao" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="_11" target="1.7" />
+      <module name="spring-mybatis-integration-vo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
