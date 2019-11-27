@@ -19,7 +19,7 @@ public interface UserInfoDao {
      * 添加用户信息
      * @param userInfo
      */
-    void insert(UserInfo info);
+    void insert(UserInfo userinfo);
 
     
 
